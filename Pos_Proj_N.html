@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Site — Home / About / Gallery</title>
+  <style>
+    /* --- Minimal CSS --- */
+    :root {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: #111;
+    }
+    body {
+      margin: 0;
+      line-height: 1.5;
+      background: #fff;
+    }
+
+    /* Sticky header (nav) */
+    header {
+      position: sticky;
+      top: 0;
+      background: #f8f9fa;
+      border-bottom: 1px solid #e6e6e6;
+      z-index: 10;
+    }
+    .nav {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      padding: 0.75rem 1rem;
+    }
+    .nav h1 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .nav a {
+      margin-left: auto;
+      text-decoration: none;
+      color: inherit;
+      padding: 0.35rem 0.6rem;
+    }
+    .nav a + a { margin-left: 0.5rem; }
+
+    /* Page layout */
+    main {
+      max-width: 1000px;
+      margin: 1.25rem auto;
+      padding: 0 1rem;
+      padding-bottom: 5.5rem; /* space for fixed footer */
+    }
+    section {
+      margin: 1.5rem 0;
+    }
+    h2 { margin-top: 0; }
+
+    /* Simple gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.75rem;
+    }
+    .gallery img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: 6px;
+      border: 1px solid #eaeaea;
+    }
+
+    /* Fixed footer */
+    footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: #f1f3f5;
+      border-top: 1px solid #e6e6e6;
+      padding: 0.6rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    /* Small helpers */
+    .lead { color: #444; }
+    .card {
+      padding: 0.9rem;
+      border: 1px solid #eee;
+      border-radius: 6px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav" aria-label="Main">
+      <h1>My Simple Site</h1>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="card">
+      <h2>Home</h2>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis, perferendis.</p>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero.
+        Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.
+      </p>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada, sem in
+        vestibulum rutrum, sapien nisl facilisis neque, vitae tincidunt orci enim at lorem.
+      </p>
+      <p>
+        Fusce sit amet orci quis arcu vestibulum vulputate. Aenean a lorem at lacus gravida
+        efficitur. Integer pretium, odio vitae efficitur posuere, massa justo consequat urna,
+        nec eleifend nibh urna et lectus.
+      </p>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <!-- Using placeholder images; replace src with your images if you want -->
+        <img src="https://via.placeholder.com/400x300?text=1" alt="Placeholder 1">
+        <img src="https://via.placeholder.com/400x300?text=2" alt="Placeholder 2">
+        <img src="https://via.placeholder.com/400x300?text=3" alt="Placeholder 3">
+        <img src="https://via.placeholder.com/400x300?text=4" alt="Placeholder 4">
+        <img src="https://via.placeholder.com/400x300?text=5" alt="Placeholder 5">
+        <img src="https://via.placeholder.com/400x300?text=6" alt="Placeholder 6">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> My Simple Site — a tiny static page
+  </footer>
+
+  <script>
+    // Small script: set current year (optional, tiny)
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
