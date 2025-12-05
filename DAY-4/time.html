@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Digital Clock</h1>
+<p id="clock"></p>
+
+<script>
+function updateClock(){
+  let d = new Date();
+  let h = d.getHours();
+  let m = d.getMinutes();
+  let s = d.getSeconds();
+  document.getElementById("clock").innerHTML = h + ":" + m + ":" + s;
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
+
+</body>
+</html>
