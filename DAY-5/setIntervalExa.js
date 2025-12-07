@@ -1,7 +1,9 @@
-console.log("One")
-setTimeout(() => 
+console.log("One");
+
+setTimeout(()=>
 {
     console.log("Two")
 }
-, 200);
-console.log("Three")
+    ,2000);
+    
+console.log("Three");
