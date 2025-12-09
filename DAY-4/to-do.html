@@ -23,31 +23,46 @@
     let btn1 = document.getElementById("btn1"); 
     let btn2 = document.getElementById("btn2");
 
-    let list = document.querySelector(".list"); // new small change
+    let list = document.querySelector(".list");
     let index = 0;
 
     btn1.addEventListener("click", function(){
-        if(ip.value.trim() === "") return;   // tiny validation
+        if(ip.value.trim() === "") return;
         index++;
 
-        let li = document.createElement("p");
-        li.textContent = index + ". " + ip.value;
-        li.className = "text-2xl font-semibold mx-4 my-2";
+        let container = document.createElement("div");
+        container.className = "flex items-center justify-between mx-4 my-2";
 
-        list.appendChild(li);   // add inside list
-        ip.value = "";          // clear input
+        let text = document.createElement("p");
+        text.textContent = index + ". " + ip.value;
+        text.className = "text-2xl font-semibold";
+
+        let delBtn = document.createElement("button");
+        delBtn.textContent = "delete";
+        delBtn.className = "ml-4 px-2 bg-red-500 text-white rounded";
+
+        delBtn.addEventListener("click", function(){
+            container.remove();
+        });
+
+        container.appendChild(text);
+        container.appendChild(delBtn);
+
+        list.appendChild(container);
+
+        ip.value = "";
     });
 
     document.body.addEventListener("dblclick", function(e){
         if(e.target.tagName === "P"){
             e.target.style.textDecoration = "line-through";
-            e.target.style.color = "gray";   // tiny fix
+            e.target.style.color = "gray";
             e.target.style.opacity = "0.6";
         }
     });
 
     btn2.addEventListener("click", function(){
-        list.innerHTML = "";  // tiny simpler removal
+        list.innerHTML = "";
         index = 0;
     });
 </script>
