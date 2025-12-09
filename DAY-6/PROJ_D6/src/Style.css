@@ -1,0 +1,20 @@
+.bg {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(17, 94, 131, 0.08);
+    color: #0f172a;
+}
+
+.bg h2 {
+    margin: 0 0 0.5rem;
+    font-size: 1.6rem;
+    color: #184e77;
+}
+
+.bg p {
+    margin: 0;
+    line-height: 1.7;
+    color: #475569;
+}
