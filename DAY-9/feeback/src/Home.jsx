@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useContext } from "react";
+import DataContext from "./context/DataContext";
 
-const Home =({posts})=>{
-    return(
-        <div>
-            {posts.map((post) => (
-                <div key={post.id}>
-                    <h3>{post.title}</h3>
-                    <p>{post.datetime}</p>
-                    <p>{post.body}</p>
-                </div>
-            ))}
+const Home = () => {
+  const { searchResults } = useContext(DataContext);
+
+  return (
+    <div>
+      {searchResults.map((post) => (
+        <div key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.body}</p>
+          <p>{post.datetime || post.datatime}</p>
+          <hr />
         </div>
-    )
-}
-export default Home
+      ))}
+    </div>
+  );
+};
+
+export default Home;
