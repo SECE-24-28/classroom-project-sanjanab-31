@@ -1,0 +1,7 @@
+{
+    "student":[
+        {"sid":1,"name":"Alice","smark":85},
+        {"sid":2,"name":"Bob","smark":90},
+        {"sid":3,"name":"Charlie","smark":78}
+    ]
+}
