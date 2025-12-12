@@ -5,15 +5,14 @@ const Search = () => {
   const { search, setSearch } = useContext(DataContext);
 
   return (
-    <div>
+    <div className="searchContainer">
       <input
         className="searchBox"
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
-        placeholder="Search here..."
+        placeholder="Search feedback..."
       />
-
     </div>
   );
 };

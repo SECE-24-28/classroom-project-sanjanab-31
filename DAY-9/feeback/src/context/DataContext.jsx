@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import { format } from "date-fns";
 import api from "../api/Post";
+import { useNavigate } from "react-router-dom";
 
 const DataContext = createContext();
 
@@ -10,6 +11,8 @@ export const DataProvider = ({ children }) => {
   const [searchResults, setSearchResults] = useState([]);
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+
+  const navigate = useNavigate();
 
   // Fetch initial data
   useEffect(() => {
@@ -42,6 +45,8 @@ export const DataProvider = ({ children }) => {
     setPosts([...posts, newObj]);
     setTitle("");
     setBody("");
+    alert("Data Insertion successful");
+    navigate("/");
   };
 
   return (

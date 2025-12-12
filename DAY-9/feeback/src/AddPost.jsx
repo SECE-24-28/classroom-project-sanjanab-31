@@ -7,6 +7,9 @@ const AddPost = () => {
 
   return (
     <form onSubmit={handleSubmit} className="formBox">
+      <h1 className="formtitle">Add Feedback</h1>
+      <p className="formpara">this form is to add your feeback!!!</p>
+      <label >Title:</label>
       <input
         type="text"
         placeholder="Title"
@@ -14,7 +17,7 @@ const AddPost = () => {
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-
+      <label >Body:</label>
       <textarea
         placeholder="Body"
         className="textareaBox"
