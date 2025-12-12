@@ -1,10 +1,12 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import DataContext from "./context/DataContext";
 import { useContext, useState, useEffect } from "react";
+import { ArrowLeft } from "lucide-react";
 
 const EditPost = () => {
   const { posts,  handleEdit } = useContext(DataContext);
   const { id } = useParams();
+  const navigate = useNavigate();
 
   const post = posts.find((post) => post.id.toString() === id);
 
@@ -19,10 +21,18 @@ const EditPost = () => {
     }
   }, [post]);
 
-  if (!post) return <div className="noResult"><h1>No results</h1></div>;
+  const handleSave = () => {
+    handleEdit(post.id, editTitle, editBody);
+    navigate("/");
+  };
+
+  if (!post) return <div className="noResult"><h1>Feedback Not Found</h1></div>;
 
   return (
     <div className="editContainer">
+      <button onClick={() => navigate(-1)} className="backButton">
+        <ArrowLeft size={18} /> Back
+      </button>
       <h1>Edit Feedback</h1>
       
       <label>Title:</label>
@@ -43,8 +53,9 @@ const EditPost = () => {
       />
 
       <button 
-        onClick={() => handleEdit(post.id, editTitle, editBody)}
+        onClick={handleSave}
         className="btn"
+        disabled={!editTitle.trim() || !editBody.trim()}
       >
         Save Changes
       </button>

@@ -67,7 +67,7 @@ export const DataProvider = ({ children }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const id = posts.length ? Number(posts[posts.length - 1].id) + 1 : 1;
+    const id = posts.length ? String(Number(posts[posts.length - 1].id) + 1) : 1;
     const datetime = format(new Date(), "MMM dd, yyyy pp");
 
     const newObj = { id, title, body, datetime };

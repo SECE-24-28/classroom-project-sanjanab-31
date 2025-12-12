@@ -44,6 +44,7 @@ body {
   font-weight: 500;
   font-size: 15px;
   transition: all 0.25s ease;
+  position: relative;
 }
 
 .navbar a:hover {
@@ -51,11 +52,16 @@ body {
   color: #2563eb;
 }
 
+.navbar a.active {
+  color: #2563eb;
+  background: #eff6ff;
+}
+
 /* Search Container */
 .searchContainer {
   width: 100%;
   max-width: 700px;
-  margin: 30px auto 20px;
+  margin: 40px auto 30px;
   padding: 0 20px;
 }
 
@@ -170,11 +176,19 @@ body {
   transform: translateY(0);
 }
 
+.btn:disabled {
+  background: #cbd5e1;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 /* Home Page */
 .hometotal {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 30px 20px;
+  min-height: calc(100vh - 90px);
 }
 
 .topBar {
@@ -208,9 +222,9 @@ body {
 .cardContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  gap: 24px;
+  gap: 28px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 10px 20px 40px;
 }
 
 .card {
@@ -238,14 +252,20 @@ body {
   top: 24px;
   right: 24px;
   cursor: pointer;
-  padding: 8px;
+  padding: 6px;
   border-radius: 8px;
   transition: all 0.3s ease;
 }
 
+.editLink svg,
+.btndel svg {
+  width: 16px;
+  height: 16px;
+}
+
 .editLink {
   color: #2563eb;
-  right: 68px;
+  right: 60px;
 }
 
 .editLink:hover {
@@ -290,35 +310,162 @@ body {
 
 .noResult {
   text-align: center;
-  padding: 80px 20px;
-  font-size: 16px;
-  color: #5f6368;
+  padding: 100px 20px;
+  font-size: 18px;
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.noResult h1 {
+  font-size: 24px;
+  color: #64748b;
+  font-weight: 500;
 }
 
 /* Edit Page */
 .editContainer {
   max-width: 700px;
-  margin: 30px auto;
-  padding: 32px;
+  margin: 40px auto;
+  padding: 40px;
   background: #ffffff;
-  border-radius: 12px;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Poppins', sans-serif;
+  color: #64748b;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 24px;
+}
+
+.backButton:hover {
+  color: #2563eb;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  transform: translateX(-3px);
 }
 
 .editContainer h1 {
-  color: #202124;
-  font-size: 28px;
+  color: #1e293b;
+  font-size: 30px;
   font-weight: 600;
-  margin-bottom: 24px;
+  margin-bottom: 28px;
+}
+
+.editContainer label {
+  color: #1e293b;
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: block;
 }
 
 .editContainer .inputBox,
 .editContainer .textareaBox {
   width: 100%;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .editContainer .btn {
   margin-top: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px 30px;
+    text-align: center;
+  }
+
+  .brand {
+    font-size: 24px;
+  }
+
+  .navLinks {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cardContainer {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+  }
+
+  .formBox,
+  .editContainer {
+    padding: 28px 24px;
+    margin: 20px 16px;
+  }
+
+  .searchContainer {
+    margin: 20px auto 15px;
+  }
+
+  .hometotal {
+    padding: 16px;
+  }
+
+  .topBar {
+    padding: 16px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 16px 20px;
+  }
+
+  .navbar a {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .formBox,
+  .editContainer {
+    padding: 24px 20px;
+  }
+
+  .formtitle {
+    font-size: 24px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection Styling */
+::selection {
+  background: #bfdbfe;
+  color: #1e293b;
+}
+
+/* Focus Visible for Accessibility */
+*:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
 }

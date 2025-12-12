@@ -1,70 +1,22 @@
 {
   "feedback": [
     {
-      "id": "1",
-      "title": "Great Course!",
-      "datatime": "APR 10, 2024 12:11:45 PM",
-      "body": "This course was very informative and well-structured."
+      "id": 1,
+      "title": "Mern stack",
+      "body": "I learnt many new things today",
+      "datetime": "Dec 12, 2025 1:50:27 PM"
     },
     {
-      "id": "4",
-      "title": "Too Fast-Pacedaejfq",
-      "body": "Thedvd course moved too quickly for beginners to keep up.",
-      "datetime": "Dec 12, 2025 1:35:30 PM"
+      "id": "2",
+      "title": "Node js",
+      "body": "Backend that connect you",
+      "datetime": "Dec 12, 2025 1:50:43 PM"
     },
     {
-      "id": "6",
-      "title": "Hi",
-      "body": "Hevsdvllo",
-      "datetime": "Dec 12, 2025 1:03:39 PM"
-    },
-    {
-      "id": "7",
-      "title": "Hi",
-      "datatime": "DEC 11, 2025 2:8:49 PM",
-      "body": "MM"
-    },
-    {
-      "id": "8",
-      "title": "gentl",
-      "datetime": "Dec 11, 2025 2:54:24 PM",
-      "body": "hi hello how rerf"
-    },
-    {
-      "id": "9",
-      "title": "",
-      "datetime": "Dec 11, 2025 3:44:30 PM",
-      "body": ""
-    },
-    {
-      "id": "10",
-      "title": "gchndg",
-      "datetime": "Dec 11, 2025 3:44:47 PM",
-      "body": " bcmgjdtue"
-    },
-    {
-      "id": "11",
-      "title": "",
-      "datetime": "Dec 12, 2025 11:10:21 AM",
-      "body": ""
-    },
-    {
-      "id": 12,
-      "title": "acs",
-      "datetime": "Dec 12, 2025 11:27:53 AM",
-      "body": "acas"
-    },
-    {
-      "id": 13,
-      "title": "bvh",
-      "datetime": "Dec 12, 2025 11:53:07 AM",
-      "body": "vhjj"
-    },
-    {
-      "id": 14,
-      "title": "",
-      "datetime": "Dec 12, 2025 12:02:46 PM",
-      "body": ""
+      "id": "3",
+      "title": "React",
+      "body": "The ui that gets the users eye",
+      "datetime": "Dec 12, 2025 1:51:00 PM"
     }
   ]
 }
