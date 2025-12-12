@@ -8,26 +8,29 @@ const AddPost = () => {
   return (
     <form onSubmit={handleSubmit} className="formBox">
       <h1 className="formtitle">Add Feedback</h1>
-      <p className="formpara">this form is to add your feeback!!!</p>
-      <label >Title:</label>
+      <p className="formpara">Share your thoughts and feedback with us</p>
+      
+      <label>Title:</label>
       <input
         type="text"
-        placeholder="Title"
+        placeholder="Enter feedback title"
         className="inputBox"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        required
       />
-      <label >Body:</label>
+      
+      <label>Body:</label>
       <textarea
-        placeholder="Body"
+        placeholder="Enter feedback details"
         className="textareaBox"
         value={body}
         onChange={(e) => setBody(e.target.value)}
+        required
       />
 
-      <button className="btn" type="submit">Save</button>
+      <button className="btn" type="submit">Submit Feedback</button>
     </form>
-
   );
 };
 

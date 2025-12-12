@@ -14,7 +14,7 @@ export const DataProvider = ({ children }) => {
 
   const navigate = useNavigate();
 
-  // Fetch initial data
+  // Fetch initial posts
   useEffect(() => {
     const fetchData = async () => {
       const res = await api.get("/feedback");
@@ -23,7 +23,7 @@ export const DataProvider = ({ children }) => {
     fetchData();
   }, []);
 
-  // Search Filter
+  // Search filter
   useEffect(() => {
     const filtered = posts.filter((post) =>
       post.title.toLowerCase().includes(search.toLowerCase())
@@ -31,20 +31,53 @@ export const DataProvider = ({ children }) => {
     setSearchResults(filtered);
   }, [search, posts]);
 
-  // Form Submit
+  // DELETE POST
+  const handleDelete = async (id) => {
+    try {
+      await api.delete(`/feedback/${id}`);
+      const newList = posts.filter((post) => post.id !== id);
+      setPosts(newList);
+
+      alert("Data Deletion successful");
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  // EDIT POST
+  const handleEdit = async (id, editTitle, editBody) => {
+    const datetime = format(new Date(), "MMM dd, yyyy pp");
+
+    const updatedPost = { id, title: editTitle, body: editBody, datetime };
+
+    await api.put(`/feedback/${id}`, updatedPost);
+
+    const updatedList = posts.map((post) =>
+      post.id === id ? updatedPost : post
+    );
+
+    setPosts(updatedList);
+
+    alert("Data Updated Successfully");
+    navigate("/");
+  };
+
+  // ADD NEW POST
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     const id = posts.length ? Number(posts[posts.length - 1].id) + 1 : 1;
     const datetime = format(new Date(), "MMM dd, yyyy pp");
 
-    const newObj = { id, title, datetime, body };
+    const newObj = { id, title, body, datetime };
 
     await api.post("/feedback", newObj);
 
     setPosts([...posts, newObj]);
     setTitle("");
     setBody("");
+
     alert("Data Insertion successful");
     navigate("/");
   };
@@ -61,6 +94,8 @@ export const DataProvider = ({ children }) => {
         body,
         setBody,
         handleSubmit,
+        handleDelete,
+        handleEdit
       }}
     >
       {children}
