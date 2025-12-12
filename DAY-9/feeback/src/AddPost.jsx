@@ -6,22 +6,25 @@ const AddPost = () => {
     useContext(DataContext);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="formBox">
       <input
         type="text"
         placeholder="Title"
+        className="inputBox"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
-      /><br/>
+      />
 
       <textarea
         placeholder="Body"
+        className="textareaBox"
         value={body}
         onChange={(e) => setBody(e.target.value)}
-      /><br/>
+      />
 
-      <button type="submit">Save</button>
+      <button className="btn" type="submit">Save</button>
     </form>
+
   );
 };
 

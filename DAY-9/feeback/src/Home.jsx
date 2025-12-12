@@ -5,16 +5,16 @@ const Home = () => {
   const { searchResults } = useContext(DataContext);
 
   return (
-    <div>
+    <div className="cardContainer">
       {searchResults.map((post) => (
-        <div key={post.id}>
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
-          <p>{post.datetime || post.datatime}</p>
-          <hr />
+        <div key={post.id} className="card">
+          <h2 className="cardTitle">{post.title}</h2>
+          <p className="cardBody">{post.body}</p>
+          <p className="cardDate">{post.datetime || post.datatime}</p>
         </div>
       ))}
     </div>
+
   );
 };
 

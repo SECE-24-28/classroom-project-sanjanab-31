@@ -7,11 +7,13 @@ const Search = () => {
   return (
     <div>
       <input
+        className="searchBox"
         type="text"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         placeholder="Search here..."
       />
+
     </div>
   );
 };
