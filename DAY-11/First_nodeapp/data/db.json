@@ -1,16 +1,20 @@
 {
     "courses": [
         {
-            "id": 1,
-            "name": "Node.js for Beginners",
-            "duration": "4 weeks",
-            "level": "Beginner"
+            "cid": 1,
+            "cname":"java",
+            "cdur":"6 months"
+    
         },
         {
-            "id": 2,
-            "name": "Advanced Node.js",
-            "duration": "6 weeks",
-            "level": "Advanced"
+            "cid": 2,
+            "cname":"python",
+            "cdur":"4 months"
+        },
+        {
+            "cid": 3,
+            "cname":"nodejs",
+            "cdur":"3 months"
         }
     ]
 }
