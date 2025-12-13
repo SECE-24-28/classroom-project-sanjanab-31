@@ -1,20 +1,22 @@
-{
-    "courses": [
-        {
-            "cid": 1,
-            "cname":"java",
-            "cdur":"6 months"
-    
-        },
-        {
-            "cid": 2,
-            "cname":"python",
-            "cdur":"4 months"
-        },
-        {
-            "cid": 3,
-            "cname":"nodejs",
-            "cdur":"3 months"
-        }
-    ]
-}
+[
+    {
+      "cid": 1,
+      "cname": "java",
+      "cdur": "6 months"
+    },
+    {
+      "cid": 2,
+      "cname": "python",
+      "cdur": "4 months"
+    },
+    {
+      "cid": 3,
+      "cname": "nodejs",
+      "cdur": "3 months"
+    },
+    {
+      "cid": "4",
+      "cname": "react",
+      "cdur": "6  months"
+    }
+]
