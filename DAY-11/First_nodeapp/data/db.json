@@ -1,0 +1,16 @@
+{
+    "courses": [
+        {
+            "id": 1,
+            "name": "Node.js for Beginners",
+            "duration": "4 weeks",
+            "level": "Beginner"
+        },
+        {
+            "id": 2,
+            "name": "Advanced Node.js",
+            "duration": "6 weeks",
+            "level": "Advanced"
+        }
+    ]
+}
