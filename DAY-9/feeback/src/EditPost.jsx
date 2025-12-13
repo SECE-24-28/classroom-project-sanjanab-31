@@ -13,7 +13,6 @@ const EditPost = () => {
   const [editTitle, setEditTitle] = useState("");
   const [editBody, setEditBody] = useState("");
 
-  // Load post into local state
   useEffect(() => {
     if (post) {
       setEditTitle(post.title);

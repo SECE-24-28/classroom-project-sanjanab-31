@@ -14,7 +14,6 @@ export const DataProvider = ({ children }) => {
 
   const navigate = useNavigate();
 
-  // Fetch initial posts
   useEffect(() => {
     const fetchData = async () => {
       const res = await api.get("/feedback");
@@ -22,8 +21,6 @@ export const DataProvider = ({ children }) => {
     };
     fetchData();
   }, []);
-
-  // Search filter
   useEffect(() => {
     const filtered = posts.filter((post) =>
       post.title.toLowerCase().includes(search.toLowerCase())
@@ -31,7 +28,6 @@ export const DataProvider = ({ children }) => {
     setSearchResults(filtered);
   }, [search, posts]);
 
-  // DELETE POST
   const handleDelete = async (id) => {
     try {
       await api.delete(`/feedback/${id}`);
@@ -45,7 +41,6 @@ export const DataProvider = ({ children }) => {
     }
   };
 
-  // EDIT POST
   const handleEdit = async (id, editTitle, editBody) => {
     const datetime = format(new Date(), "MMM dd, yyyy pp");
 
@@ -63,7 +58,6 @@ export const DataProvider = ({ children }) => {
     navigate("/");
   };
 
-  // ADD NEW POST
   const handleSubmit = async (e) => {
     e.preventDefault();
 
